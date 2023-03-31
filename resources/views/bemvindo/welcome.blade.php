@@ -25,7 +25,7 @@
                 <p class="card-participants">X Participantes</p>
                 <a href="#" class="btn btn-primary">Saber mais</a>
             </div>
-        </div>
+        </div> 
         @endforeach
     </div>
 </div>

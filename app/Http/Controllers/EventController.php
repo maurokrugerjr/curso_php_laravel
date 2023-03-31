@@ -30,15 +30,18 @@ class EventController extends Controller
 
     public function store(Request $request){
 
-        $event = new Event;
+        $evento = new Event;
 
-        $event->title = $request->title;
-        $event->description = $request->description;
-        $event->city = $request->city;
-        $event->private = $request->private;
+        $evento->title = $request->title;
+        $evento->description = $request->description;
+        $evento->city = $request->city;
+        $evento->private = $request->private;
 
-        $event->save();
 
-        return redirect('bemvindo');
+        
+
+        $evento->save();
+
+        return redirect('bemvindo')->with('msg', 'Evento criado com sucesso!');
     }
 }

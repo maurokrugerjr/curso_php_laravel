@@ -25,7 +25,7 @@
             </a>
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a href="/" class="nav-link">Eventos</a>
+                <a href="/bemvindo" class="nav-link">Eventos</a>
               </li>
               <li class="nav-item">
                 <a href="/events" class="nav-link">Criar Eventos</a>
@@ -40,7 +40,14 @@
           </div>
         </nav>
       </header>
-      @yield('content')
+      <main>
+        <div class="container-fluid">
+          @if(session('msg'))
+            <p class="msg">{{session('msg')}}</p>
+          @endif
+          @yield('content')
+        </div>
+      </main>
       <footer>
         <p>HDC Events &copy; 2020</p>
       </footer>
