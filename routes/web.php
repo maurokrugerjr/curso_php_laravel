@@ -21,3 +21,4 @@ Route::get('/events', [EventController::class, 'create']);
 
 Route::post('/events', [EventController::class, 'store']);
 
+ 

@@ -37,7 +37,19 @@ class EventController extends Controller
         $evento->city = $request->city;
         $evento->private = $request->private;
 
+        if ($request->hasfile('image') && $request->file('image')->isvalid()) {
 
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $evento->image = $imageName;
+
+        }
         
 
         $evento->save();
