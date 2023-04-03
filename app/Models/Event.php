@@ -9,4 +9,16 @@ class Event extends Model
 {
     public $table = 'event';
     use HasFactory;
+
+    protected $casts = [
+
+        'items' => 'array'
+
+    ];
+
+    protected $dates = ['date'];
+
+    public function user() {
+        return $this->belongsTo('App\Models\User');
+    }
 }
