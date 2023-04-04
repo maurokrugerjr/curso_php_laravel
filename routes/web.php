@@ -23,7 +23,7 @@ Route::get('/events/{id}', [EventController::class, 'show']);
 
 Route::post('/events', [EventController::class, 'store']);
 
-     
+
 
 Route::middleware([
     'auth:sanctum',
